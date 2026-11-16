@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --novara-navy: #0B1730;
+    --novara-navy-deep: #071024;
+    --novara-blue: #1155EE;
+    --novara-blue-hover: #0B44CC;
+    --novara-ice: #E9F0FD;
+    --novara-surface: #F6F8FC;
+    --novara-border: #E2E8F0;
+    --novara-ink: #0F1D3A;
+    --novara-muted: #5B6B84;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--novara-surface);
+    color: var(--novara-ink);
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .font-mono-tabular {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes novaraToastShrinkRtl {
+  from {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+  to {
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+}
+
+.novara-toast-progress {
+  animation-name: novaraToastShrinkRtl;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .novara-toast-progress {
+    animation-duration: 0.01ms !important;
+  }
+}
